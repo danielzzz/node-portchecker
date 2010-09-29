@@ -29,7 +29,7 @@ exports.getFirstAvailable = function (startPort, endPort, host, callback) {
     
     var check = function() {
         //---- return -1 if we checked all ports from the range already
-        currentPort>endPort && callback(-1, host);
+        if (currentPort>endPort) {callback(-1, host); return; };
         
         console.log('checking :' + currentPort);
         exports.isOpen(currentPort, host, onCheckPort);
