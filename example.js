@@ -13,3 +13,10 @@ portchecker.getFirstAvailable(startPort, endPort, host, function(p, host) {
         console.log('the first free port found on ' + host + ' between ' + startPort + ' and ' + endPort + ' is ' + p);
     }
 });
+
+
+//---- check if the port is open ---------------------------------------------------
+
+//portchecker.isOpen(81, 'localhost', function(isOpen){
+//    console.log('port 81 on localhost is ' + (isOpen ? 'open' : 'closed'));
+//})
