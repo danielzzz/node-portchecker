@@ -25,7 +25,7 @@ exports.getFirstAvailable = function (p, m, host, callback) {
     
     var onOpen = function() {
         notFree = true;
-        console.log(host+":"+p+" is taken");
+        //console.log(host+":"+p+" is taken");
         
         //not found
         if (p >= m) { 
@@ -43,9 +43,6 @@ exports.getFirstAvailable = function (p, m, host, callback) {
     conn.on('error', function() {});
     
     conn.on('connect', onOpen);
-    
-    
 }
 
-//usage example: find first available port between 2000 and 2100 on localhost
-this.getFirstAvailable(80, 8090, 'localhost', function(p, host) { console.log(host+":"+p+" is free");});
+
