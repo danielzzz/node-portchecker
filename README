@@ -1,0 +1,18 @@
+NODE-PING
+A poor man's ping for nodejs
+
+LICENSE MIT
+(C) Daniel Zelisko
+http://github.com/danielzzz/node-portchecker
+
+DESCRIPTION
+This library allows for easy and simple tcp port checking. 
+It can be used for determining if a given port is open, or to find a first available port
+
+
+EXAMPLE:
+
+//find first available port between 80 and 8090 on localhost
+portchecker.getFirstAvailable(80, 8090, 'localhost', function(p, host) { console.log(host+":"+p+" is free");});
+
+
