@@ -42,6 +42,37 @@ exports.getFirstAvailable = function (startPort, endPort, host, callback) {
     
 }
 
+exports.getAllOpen = function (startPort, endPort, host, callback) {
+    if (startPort>endPort) {
+        throw new Error('portchecker: startPort must be lower than endPort');
+    }
+    console.log('looking for open ports between ' + startPort + '-' + endPort + ' on ' + host);
+    var notFree = false,
+        openPorts = [];
+    var currentPort = startPort;
+    
+    var onCheckPort = function(isOpen){
+        if (isOpen) {
+            openPorts.push((currentPort-1))
+        } 
+        check();
+    }
+    
+    var check = function() {
+        //---- return -1 if we checked all ports from the range already
+        if (currentPort>endPort) {callback(openPorts, host); return; };
+        
+        console.log('checking :' + currentPort);
+        exports.isOpen(currentPort, host, onCheckPort);
+        currentPort++;
+    }
+    
+    //----- start checking ----------
+    check();
+        
+    
+}
+
 exports.isOpen = function (p, host, callback) {
     var isOpen = false;
     var conn = net.createConnection(p, host);
@@ -57,7 +88,7 @@ exports.isOpen = function (p, host, callback) {
     };
     
     conn.on('close', onClose);
-    conn.on('error', function() {});
+    conn.on('error', function() {conn.end();});
     
     conn.on('connect', onOpen);
 }
