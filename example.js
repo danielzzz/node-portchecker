@@ -16,7 +16,6 @@ portchecker.getFirstAvailable(startPort, endPort, host, function(p, host) {
 
 
 //---- check if the port is open ---------------------------------------------------
-
-//portchecker.isOpen(81, 'localhost', function(isOpen){
-//    console.log('port 81 on localhost is ' + (isOpen ? 'open' : 'closed'));
+//portchecker.isOpen(80, 'localhost', function(isOpen){
+//    console.log('port 80 on localhost is ' + (isOpen ? 'open' : 'closed'));
 //})
