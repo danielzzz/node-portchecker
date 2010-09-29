@@ -1,6 +1,6 @@
 var portchecker = require('./portchecker');
 
-var host = 'localhost',
+var host = '192.168.1.1',
     startPort = 80,
     endPort = 8080;
 

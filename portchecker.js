@@ -76,7 +76,10 @@ exports.getAllOpen = function (startPort, endPort, host, callback) {
 exports.isOpen = function (p, host, callback) {
     var isOpen = false;
     var conn = net.createConnection(p, host);
+    var timeout = 400; //miliseconds
+    var timeoutId = setTimeout(function() {onClose();}, timeout);
     var onClose = function() {
+        clearTimeout(timeoutId);
         delete conn;
         callback(isOpen);    
     };
@@ -89,7 +92,6 @@ exports.isOpen = function (p, host, callback) {
     
     conn.on('close', onClose);
     conn.on('error', function() {conn.end();});
-    
     conn.on('connect', onOpen);
 }
 
