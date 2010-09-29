@@ -1,5 +1,5 @@
-NODE-PING
-A poor man's ping for nodejs
+NODE-PORTCHECKER
+A simple tcp port checker for node
 
 LICENSE MIT
 (C) Daniel Zelisko
