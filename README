@@ -9,6 +9,16 @@ DESCRIPTION
 This library allows for easy and simple tcp port checking. 
 It can be used for determining if a given port is open, or to find a first available port
 
+API:
+getFirstAvailable(startPort, endPort, host, cb)
+returns first available port in a given range cb(port, host)
+
+getAllOpen(startPort, endPort, host, cb)
+returns array of available ports for a given hosts in a given range cb(openPorts, host)
+
+isOpen(port, host, callback)
+returns true if a given host:port is open cb(isOpen, port, host)
+
 
 EXAMPLE:
 
