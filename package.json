@@ -2,7 +2,7 @@
   "author": "danielzzz <daniel@zelisko.net> (http://daniel.zelisko.net)",
   "name": "portchecker",
   "description": "a simple tcp port checker for node",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "http://github.com/danielzzz/node-portchecker",
   "repository": {
     "type": "git",
