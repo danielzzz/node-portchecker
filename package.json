@@ -1,0 +1,17 @@
+{
+  "author": "danielzzz <daniel@zelisko.net> (http://daniel.zelisko.net)",
+  "name": "portchecker",
+  "description": "a simple tcp port checker for node",
+  "version": "0.1.0",
+  "homepage": "http://github.com/danielzzz/node-portchecker",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/danielzzz/node-portchecker.git"
+  },
+  "engines": {
+    "node": "~0.8.5"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "main":"index.js"
+}
